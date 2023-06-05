@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do List</title>
+  <link rel="stylesheet" href="/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav>
+    <div class="contents">
+      <h1>Hello, <%= user.userid %></h1>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <form action="/dashboard" method="post">
+      <input type="text" class="inp" name="title" placeholder="Title" spellcheck="false" autocomplete="off" required />
+      <input type="text" class="inp" name="message" placeholder="Message" spellcheck="false" autocomplete="off" required />
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+  <div class="results">
+    <!--<div class="box">
+		<div class="title">
+			<p>Title</p>
+			<i class="fa fa-trash"></i>
+		</div>
+		<div class="message">
+			<p>This Is A Message From Binayak I Am Talking About Tailwind Css Hi Bisu Hi Bisu Hi Bisu Hi Bisu Hi Bisu Hi Bisu Hi Bisu Hi Bisu</p>
+		</div>
+	</div>-->
+    <% Array.from(user.data).forEach((val,ind)=>{ %>
+    <div class="box">
+      <div class="title">
+        <p><%= val.title %></p>
+        <form action="/drop/<%= ind %>" method="post">
+          <button class="fa fa-trash"></button>
+        </form>
+      </div>
+      <div class="message">
+        <p><%= val.message %></p>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+
+</html>

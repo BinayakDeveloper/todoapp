@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="/index.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="heading">
+      <p>Todo List</p>
+    </div>
+    <div class="log">
+      <% if(locals.links[0].link!="") { %>
+      <a href="<%= locals.links[0].link %>"><%= locals.links[0].text %></a>
+      <% } %>
+      <% if(locals.links[1].link!="") { %>
+      <a href="<%= locals.links[1].link %>"><%= locals.links[1].text %></a>
+      <% } %>
+      <% if(locals.links[2].link!="") { %>
+      <a href="<%= locals.links[2].link %>"><%= locals.links[2].text %></a>
+      <% } %>
+      <% if(locals.links[3].link!="") { %>
+      <a href="<%= locals.links[3].link %>"><%= locals.links[3].text %></a>
+      <% } %>
+    </div>
+  </nav>
+</body>
+<!-- <script>
+  addEventListener("load", () => {
+    let logContainer = document.querySelector(".log");
+    let cookies = document.cookie.split(";");
+    let loginCookie = [];
+    cookies.forEach((val) => {
+      if (val.trim() != '') {
+        loginCookie.push(val)
+      }
+    })
+    if (loginCookie.length == 0) {
+      let loginRegisterHTML = `<a href="/signin">Login</a>
+      <a href="/signup">Register</a>`;
+      logContainer.insertAdjacentHTML("afterbegin", loginRegisterHTML);
+    } else {
+      let logOutHTML = `<a href="/dashboard">Profile</a><a href="/logout">Logout</a>`;
+      logContainer.insertAdjacentHTML("afterbegin", logOutHTML);
+    }
+  })
+</script> -->
+
+</html>

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    text-decoration: none;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px 20px;
+}
+
+.heading>p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.data-input>form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.data-input>form>input {
+    font-size: 1.2rem;
+    padding: 9px 20px;
+    outline: 0;
+    border: 2px solid #ccc;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+}
+
+.data-input>form>input:focus {
+    border: 2px solid rgb(69, 69, 233);
+}
+
+.data-input>form>input::placeholder {
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+.data-input>form>button {
+    border: 0;
+    font-size: 1.3rem;
+    padding: 8px 25px;
+    background-color: rgb(0, 255, 170);
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.data-input>form>button:hover {
+    background-color: rgb(0, 255, 0);
+}
+
+.signUp>a {
+    color: red;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    transition: 0.2s ease-in-out;
+}
+
+.signUp>a:hover {
+    font-size: 1.2rem;
+}
